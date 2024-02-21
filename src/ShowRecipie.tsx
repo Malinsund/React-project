@@ -1,4 +1,4 @@
-import { HeartIcon } from "@heroicons/react/24/outline";
+import { HeartIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { mockedRecipies } from "./Recipies";
@@ -42,21 +42,21 @@ export default function ShowRecipie(){
           onClick={() => toggleSaved(recipie.id)}
         />
       ) : (
-        <HeartIcon // detta är när det osparas
+        <HeartIcon  // detta är när det osparas
           className="cursor-pointer w-10 h-10"
           onClick={() => toggleSaved(recipie.id)}
         />
       )}
-            <div>
-                <h2>Ingredienser:</h2>
+            <div className="ml-5">
+                <h2 className="font-bold my-2">Ingredienser:</h2>
                 <ul>
                     {recipie.ingredients.map((ingredient, index) => (
                         <li key={index}>{ingredient}</li>
                     ))}
                 </ul>
             </div>
-            <div>
-                <h3>Beskrivning:</h3>
+            <div className="ml-5">
+                <h3 className="font-bold my-2">Beskrivning:</h3>
                 <p>{recipie.description}</p>
             </div>
                         
