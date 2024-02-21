@@ -26,7 +26,7 @@ function App() {
                 <ChatBubbleBottomCenterTextIcon />
               </Link>
             </nav>
-          <div>
+          <div className='flex-grow'>
             <main>
               <Outlet />
             </main>
