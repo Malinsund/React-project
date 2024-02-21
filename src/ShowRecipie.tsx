@@ -18,7 +18,18 @@ export default function ShowRecipie(){
         <div>
            <img className="w-full h-96 object-cover" src={recipie.image}/>
             <h1 className="text-center text-xl">{recipie.title}</h1>
-            <div> {/* här skall beskrivningen av recept in*/}</div>
+            <div>
+                <h2>Ingredienser:</h2>
+                <ul>
+                    {recipie.ingredients.map((ingredient, index) => (
+                        <li key={index}>{ingredient}</li>
+                    ))}
+                </ul>
+            </div>
+            <div>
+                <h3>Beskrivning:</h3>
+                <p>{recipie.description}</p>
+            </div>
 
         </div>
     )
