@@ -1,13 +1,31 @@
-import { HeartIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
+import { Recipie, mockedRecipies } from "./Recipies";
 
-export default function SavedRecepies(){
+export default function SavedRecepiesPage(){
 
-    return(
-        <div className="flex m-10 justify-center items-center">
-            <HeartIcon className="w-20 h-20 "/>
-            <h1 className="text-lg">Dina Favoriter</h1>
-            <HeartIcon className="w-20 h-20"/>
+    const [savedRecipesIds, setSavedRecipesIds] = useState<string[]>([]);
+
+    useEffect(() => {
+        
+        const savedRecipesFromStorage = localStorage.getItem('savedRecipes');
+        if (savedRecipesFromStorage) {
+            setSavedRecipesIds(JSON.parse(savedRecipesFromStorage));
+        }
+    }, []);
+
+    const savedRecipes = mockedRecipies.filter(recipe => savedRecipesIds.includes(recipe.id));
+
+    return (
+        <div>
+            <h1 className="text-center text-3xl">Sparade Recept</h1>
+            {savedRecipes.map((recipie: Recipie) => (
+                <div key={recipie.id}>
+                    <img className="w-40 h-40 object-cover rounded" src={recipie.image} alt={recipie.title} />
+                    <h2>{recipie.title}</h2>
+                </div>
+            ))}
+            
         </div>
-    )
+    );
 
 }
