@@ -4,12 +4,16 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import App from './App.tsx';
 import HomePage from './HomePage.tsx';
 import Library from './Library.tsx';
+import SavedRecepies from './SavedRecepies.tsx';
+import Contact from './Contact.tsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" Component={App} >
       <Route path="homepage" Component={HomePage} />
       <Route path="library" Component={Library}  />
+      <Route path='savedRec' Component={SavedRecepies} />
+      <Route path='contact' Component={Contact} />
       <Route path='*' element={<span>Sidan finns inte...</span>} />
 
     </Route>

@@ -14,7 +14,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",
-    "react-routing": "^0.0.7"
+    "react-routing": "^0.0.7",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
@@ -27,5 +28,15 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
+  },
+  
+    "resolutions": {
+      "styled-components": "^5"
+    },
+
+    "editor.defaultFormatter": "<another formatter>",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
+  
 }

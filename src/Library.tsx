@@ -1,5 +1,5 @@
 export default function Library(){
     return(
-        <div>Image!</div>
+        <div>massa trevliga bilder på mat </div>
     )
 }

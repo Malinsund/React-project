@@ -1,25 +1,40 @@
-import { HomeIcon } from '@heroicons/react/24/outline';
-import { PhotoIcon } from '@heroicons/react/24/solid';
+import { ChatBubbleBottomCenterTextIcon, HeartIcon, HomeIcon, PhotoIcon } from '@heroicons/react/24/outline';
 import { Link, Outlet } from 'react-router-dom';
+import Header from './Header';
 
 
 function App() {
   return (
     <>
-    <header>Hej!</header>
-    <nav>
-      <Link to="/homepage">
-      <HomeIcon className='h-20 w-20 cursor-poiner'/>
-      </Link>
-      <Link to="/library">
-      <PhotoIcon className='h-20 w-20 cursor-poiner'/>
-      </Link>
-    </nav>
-    <aside></aside>
-    <main>
-      <Outlet />
-    </main>
-    <footer></footer>
+    
+      <div>
+        <header>
+          <Header/>
+        </header>
+        <div className='flex'>
+            <nav className='bg-stone-200'>
+              <Link to="/homepage">
+              <HomeIcon className='h-10 w-10 cursor-poiner'/>
+              </Link>
+              <Link to="/library">
+              <PhotoIcon className='h-10 w-10 cursor-poiner'/>
+              </Link>
+              <Link to="/savedRec">
+                <HeartIcon className='h-10 w-10 cursor-poiner'/>
+              </Link>
+              <Link to="/contact">
+                <ChatBubbleBottomCenterTextIcon />
+              </Link>
+            </nav>
+          <div>
+            <main>
+              <Outlet />
+            </main>
+          </div>
+        </div>
+        <footer></footer>
+      </div>
+    
     </>
   );
 }
