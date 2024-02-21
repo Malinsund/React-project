@@ -1,8 +1,9 @@
 export default function HomePage(){
     return (
-        <div className="bg-cover min-h-screen flex m-10 justify-center">
+        <div className="bg-cover min-h-screen flex m-10 justify-center text-center">
             <div>
-                <p>HEJ HEJ här är ett recept till dig!</p>
+                <h1>Hej!</h1>
+                <p>Jag tycker om mat!</p>
             </div>
         </div>
 
