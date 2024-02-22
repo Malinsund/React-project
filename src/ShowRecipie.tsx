@@ -55,7 +55,7 @@ export default function ShowRecipie(){
                     ))}
                 </ul>
             </div>
-            <div className="ml-5">
+            <div className="ml-5 max-w-prose">
                 <h3 className="font-bold my-2">Beskrivning:</h3>
                 <p>{recipie.description}</p>
             </div>

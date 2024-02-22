@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Recipie, mockedRecipies } from './Recipies';
 import chefHat from './assets/chefHat.png';
@@ -7,7 +7,7 @@ export default function Header(){
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState<Recipie[]>([]);
 
-    const handleSearch = (e) => {
+    const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
         const term = e.target.value;
         setSearchTerm(term);
         const results = mockedRecipies.filter(recipie =>
@@ -25,7 +25,7 @@ export default function Header(){
         <div className="flex items-center justify-between bg-stone-200">
             <div className="flex items-center">
                 <img className='h-20 w-20 m-2' src={chefHat} alt='kock mössa'/>
-                <h1 className='font-extrabold font-serif text-3xl'>Mat-Malle</h1>
+                <h1 className='font-extrabold font-sans text-3xl'>Mat-Malle</h1>
             </div>
             <div className='relative'>
                 
