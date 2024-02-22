@@ -38,7 +38,7 @@ function App() {
               </div>
             </Link>
           </nav>
-          <div className='flex-grow'>
+          <div className='flex-grow shadow-inner'>
             <main>
               <Outlet />
             </main>
