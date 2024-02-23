@@ -24,6 +24,12 @@ export default function ShowRecipie(){
       }
     };
 
+    const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const toggleFullscreen = () => {
+    setIsFullscreen(!isFullscreen);
+  };
+
     if (!recipie){
         return(
             <div>
@@ -33,9 +39,24 @@ export default function ShowRecipie(){
     }
 
     return (
-        <div>
-           <img className="w-full h-96 object-cover" src={recipie.image}/>
-            <h1 className="text-center text-xl">{recipie.title}</h1>
+        <div className="bg-stone-100 min-h-screen">
+           <div className="relative">
+        <img 
+          className={`w-full scale-75 h-96 object-cover object-center cursor-pointer ${isFullscreen ? '' : ''}`} 
+          src={recipie.image}
+          alt="Bild på recept"
+          onClick={toggleFullscreen}
+        />
+        {isFullscreen && (
+          <img 
+            className="fixed h-screen w-screen top-0 object-contain cursor-pointer"
+            src={recipie.image}
+            alt="Bild på recept i fullskärm"
+            onClick={toggleFullscreen}
+          />
+        )}
+      </div>
+            <h1 className="text-center text-3xl">{recipie.title}</h1>
             {savedRecipies.includes(recipie.id) ? (
             <HeartIcon // detta är när det är sparat
           className="cursor-pointer w-10 h-10 text-red-600"
@@ -58,6 +79,7 @@ export default function ShowRecipie(){
             <div className="ml-5 max-w-prose">
                 <h3 className="font-bold my-2">Beskrivning:</h3>
                 <p>{recipie.description}</p>
+               
             </div>
                         
         </div>
