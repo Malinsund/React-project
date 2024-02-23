@@ -5,38 +5,40 @@ import Footer from './img/Footer';
 import OliveOil from "./img/oliveOil.png";
 import Olives from "./img/olives.png";
 
+
+
 function App() {
   return (
     <>
     
       <div>
-        <header className='sticky'>
+        <header className=''>
           <Header/>
         </header>
         <div className='flex'>
-        <nav className='bg-teal-900 text-white flex min-h-screen flex-col py-8 px-3 space-y-4'>
+        <nav className='bg-teal-900 text-white flex min-h-screen text-nowrap flex-col py-8 px-3 space-y-4'>
             <Link to="/homepage">
               <div className="flex items-center">
               <HomeIcon className='h-10 w-10 cursor-pointer hover:text-amber-600 active:text-violet-700'/>
-                <span className="ml-2 hidden lg:inline">Hem</span>
+                <span className="mx-2 hidden lg:inline">Hem</span>
               </div>
             </Link>
             <Link to="/library">
               <div className="flex items-center">
                 <PhotoIcon className='h-10 w-10 cursor-pointer  hover:text-amber-600'/>
-                <span className="ml-2 hidden lg:inline">Alla recept</span>
+                <span className="mx-2 hidden lg:inline">Alla recept</span>
               </div>
             </Link>
             <Link to="/savedRec">
               <div className="flex items-center">
                 <HeartIcon className='h-10 w-10 cursor-pointer hover:text-amber-600'/>
-                <span className="ml-2 hidden lg:inline">Sparade Recept</span>
+                <span className="mx-2 hidden lg:inline">Sparade Recept</span>
               </div>
             </Link>
             <Link to="/contact">
               <div className="flex items-center">
                 <ChatBubbleBottomCenterTextIcon className='h-10 w-10 cursor-pointer hover:text-amber-600'/>
-                <span className="ml-2 hidden lg:inline">Kontakt</span>
+                <span className="mx-2 hidden lg:inline">Kontakt</span>
               </div>
             </Link>
             <div>

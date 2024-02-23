@@ -1,17 +1,17 @@
 import { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Recipie, mockedRecipies } from './Recipies';
+import { Recipe, mockedrecipes } from './Recipes';
 import chefHat from './img/chefHatWhite.png';
 
 export default function Header(){
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchResults, setSearchResults] = useState<Recipie[]>([]);
+    const [searchResults, setSearchResults] = useState<Recipe[]>([]);
 
     const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
         const term = e.target.value;
         setSearchTerm(term);
-        const results = mockedRecipies.filter(recipie =>
-            recipie.title.toLowerCase().includes(term.toLowerCase())
+        const results = mockedrecipes.filter(recipe =>
+            recipe.title.toLowerCase().includes(term.toLowerCase())
         );
         setSearchResults(results);
     };
@@ -22,9 +22,12 @@ export default function Header(){
     };
     
     return(
-        <div className="flex items-center justify-between bg-teal-900 text-white sticky">
+        <div className=''>
+        <div className="flex items-center justify-between bg-teal-900 text-white">
             <div className="flex items-center">
+                <Link to="/homepage">
                 <img className='h-20 w-20 m-2' src={chefHat} alt='kock mössa'/>
+                </Link>
                 <h1 className='font-extrabold font-sans text-3xl ml-5'>Mat-Malle</h1>
             </div>
             <div className='relative'>
@@ -38,15 +41,16 @@ export default function Header(){
                 />
                 {searchResults.length > 0 && (
                     <div className="absolute bg-white text-black shadow-md rounded-lg mt-1 p-2 w-full">
-                        {searchResults.map(recipie => (
-                            <Link key={recipie.id} to={`/recipies/${recipie.id}`} onClick={handleClearSearch}>
-                           <p>{recipie.title}</p>
+                        {searchResults.map(recipe => (
+                            <Link key={recipe.id} to={`/recipes/${recipe.id}`} onClick={handleClearSearch}>
+                           <p>{recipe.title}</p>
                        </Link>
                         ))}
                     </div>
                 )}
             </div>
             
+        </div>
         </div>
 
     )

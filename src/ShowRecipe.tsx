@@ -1,26 +1,26 @@
 import { HeartIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { mockedRecipies } from "./Recipies";
+import { mockedrecipes } from "./Recipes";
 
 
-export default function ShowRecipie(){
+export default function Showrecipe(){
     const params = useParams();
-    const recipie = mockedRecipies.find((recipie) => recipie.id === params.id);
+    const recipe = mockedrecipes.find((recipe) => recipe.id === params.id);
 
-    const [savedRecipies, setSavedRecipies] = useState<string[]>([]);
+    const [savedrecipes, setSavedrecipes] = useState<string[]>([]);
 
     const toggleSaved = (id: string) => {
-      if (savedRecipies.includes(id)) {
-        const updatedSavedRecipies = savedRecipies.filter(
+      if (savedrecipes.includes(id)) {
+        const updatedSavedrecipes = savedrecipes.filter(
           (recipeId) => recipeId !== id
         );
-        setSavedRecipies(updatedSavedRecipies);
-        localStorage.setItem("savedRecipes", JSON.stringify(updatedSavedRecipies));
+        setSavedrecipes(updatedSavedrecipes);
+        localStorage.setItem("savedRecipes", JSON.stringify(updatedSavedrecipes));
       } else {
-        const updatedSavedRecipies = [...savedRecipies, id];
-        setSavedRecipies(updatedSavedRecipies);
-        localStorage.setItem("savedRecipes", JSON.stringify(updatedSavedRecipies));
+        const updatedSavedrecipes = [...savedrecipes, id];
+        setSavedrecipes(updatedSavedrecipes);
+        localStorage.setItem("savedRecipes", JSON.stringify(updatedSavedrecipes));
       }
     };
 
@@ -30,7 +30,7 @@ export default function ShowRecipie(){
     setIsFullscreen(!isFullscreen);
   };
 
-    if (!recipie){
+    if (!recipe){
         return(
             <div>
                 <h1>Detta recept uppdateras..</h1>
@@ -43,42 +43,42 @@ export default function ShowRecipie(){
            <div className="relative">
         <img 
           className={`w-full scale-75 h-96 object-cover object-center cursor-pointer ${isFullscreen ? '' : ''}`} 
-          src={recipie.image}
+          src={recipe.image}
           alt="Bild på recept"
           onClick={toggleFullscreen}
         />
         {isFullscreen && (
           <img 
             className="fixed h-screen w-screen top-0 object-contain cursor-pointer"
-            src={recipie.image}
+            src={recipe.image}
             alt="Bild på recept i fullskärm"
             onClick={toggleFullscreen}
           />
         )}
       </div>
-            <h1 className="text-center text-3xl">{recipie.title}</h1>
-            {savedRecipies.includes(recipie.id) ? (
+            <h1 className="text-center text-3xl">{recipe.title}</h1>
+            {savedrecipes.includes(recipe.id) ? (
             <HeartIcon // detta är när det är sparat
           className="cursor-pointer w-10 h-10 text-red-600"
-          onClick={() => toggleSaved(recipie.id)}
+          onClick={() => toggleSaved(recipe.id)}
         />
       ) : (
         <HeartIcon  // detta är när det osparas
           className="cursor-pointer w-10 h-10"
-          onClick={() => toggleSaved(recipie.id)}
+          onClick={() => toggleSaved(recipe.id)}
         />
       )}
             <div className="ml-5">
                 <h2 className="font-bold my-2">Ingredienser:</h2>
                 <ul>
-                    {recipie.ingredients.map((ingredient, index) => (
+                    {recipe.ingredients.map((ingredient, index) => (
                         <li key={index}>{ingredient}</li>
                     ))}
                 </ul>
             </div>
             <div className="ml-5 max-w-prose">
                 <h3 className="font-bold my-2">Beskrivning:</h3>
-                <p>{recipie.description}</p>
+                <p>{recipe.description}</p>
                
             </div>
                         

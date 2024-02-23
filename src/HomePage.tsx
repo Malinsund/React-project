@@ -16,6 +16,4 @@ export default function HomePage(){
       </div>
     );
   }
-/** className="bg-cover min-h-screen flex items-center justify-center" style={{ backgroundImage: `url(${kiwi})` }} */
 
-/**<img className=" shadow-lg" src={chili} alt="Bild på Malin" /> */

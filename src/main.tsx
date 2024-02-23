@@ -6,7 +6,7 @@ import Contact from './ContactPage.tsx';
 import HomePage from './HomePage.tsx';
 import Library from './LibraryPage.tsx';
 import SavedRecepies from './SavedRecepiesPage.tsx';
-import ShowRecipie from './ShowRecipie.tsx';
+import Showrecipe from './ShowRecipe.tsx';
 
 
 const router = createBrowserRouter(
@@ -16,7 +16,7 @@ const router = createBrowserRouter(
       <Route path="library" Component={Library}  />
       <Route path='savedRec' Component={SavedRecepies} />
       <Route path='contact' Component={Contact} />
-      <Route path='recipies/:id' Component={ShowRecipie}/>
+      <Route path='recipes/:id' Component={Showrecipe}/>
       <Route path='*' element={<span>Sidan finns inte...</span>} />
 
     </Route>

@@ -12,7 +12,7 @@ import sweetpotatoSoup from './img/sweetpotatosoup.jpg';
 import taco from './img/taco.jpg';
 import tartar from './img/tartar.jpg';
 
-export interface Recipie {
+export interface Recipe {
     id: string;
     image: string;
     title: string;
@@ -20,7 +20,7 @@ export interface Recipie {
     description: string;
     
 }
-export const mockedRecipies: Recipie [] = [{
+export const mockedrecipes: Recipe [] = [{
 
         id: "1",
         image: fishSoup,
