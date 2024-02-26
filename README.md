@@ -34,12 +34,12 @@ to run this project locally, follow these steps:
 This is a school project where we could pick anything we wanted, I love food and I love cooking so I knew early what i wanted to work on!
 these are the requriments for the project;
 
-[x] The project contains and uses at least 6 komponents, whereas a minimum of 2 are `Stateful`-components.
-[x] React Router is used to dynamically update the URL
-[x] Git and GitHub is being used
-[x] the project folder contains this README.md file
-[x] The assignment is submitted on time
-[x] A presentation is completed
+- [x] The project contains and uses at least 6 komponents, whereas a minimum of 2 are `Stateful`-components.
+- [x] React Router is used to dynamically update the URL
+- [x] Git and GitHub is being used
+- [x] the project folder contains this README.md file
+- [x] The assignment is submitted on time
+- [x] A presentation is completed
 
 Currently, two official plugins are available:
 
