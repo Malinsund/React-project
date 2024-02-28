@@ -6,7 +6,7 @@ export default function HomePage() {
       <div className="flex">
         <div className="m-5">
           <img
-            className="shadow-lg md:w-80 w-24 hidden"
+            className="shadow-lg md:w-80 w-24 hidden md:visible"
             src={murika}
             alt="Bild på Malin"
           />
