@@ -47,7 +47,7 @@ export default function Contact() {
       <div className="text-center text-3xl ">
         <h1>Kontakta Mig</h1>
       </div>
-      <div className="flex justify-center">
+      <div className="lg:flex justify-center">
         <div className="my-10 w-80">
           <p>
             Om du har några frågor eller funderingar så tveka inte på att
@@ -55,7 +55,7 @@ export default function Contact() {
             ha det fint.
           </p>
         </div>
-        <div className="h-80 w-1 bg-gray-500 mx-20 my-10"></div>
+        <div className="lg:visible lg:h-80 w-1 bg-gray-500 mx-20 lg:my-10"></div>
 
         <form className="text-center m-2 my-10" onSubmit={handleSubmit}>
           <div>
