@@ -23,7 +23,7 @@ The application is primarily in Swedish. For users who prefer another language, 
 
 ## Installation
 
-to run this project locally, follow these steps:
+To run this project locally, follow these steps:
 
 1. Clone this repository to your VS code or local code editor
 2. Install depandencies using npm or yarn, open the terminal an type `npm install` or `yarn install`
@@ -32,14 +32,16 @@ to run this project locally, follow these steps:
 ## further information
 
 This is a school project where we could pick anything we wanted, I love food and I love cooking so I knew early what i wanted to work on!
-these are the requriments for the project;
+These are the requriments for the project;
 
-- [x] The project contains and uses at least 6 komponents, whereas a minimum of 2 are `Stateful`-components.
+- [x] The project contains and uses at least 6 komponents, whereas a minimum of 2 are "Stateful"-components.
 - [x] React Router is used to dynamically update the URL
 - [x] Git and GitHub is being used
 - [x] the project folder contains this README.md file
 - [x] The assignment is submitted on time
 - [x] A presentation is completed
+
+Heres a demo of the application:
 
 Currently, two official plugins are available:
 

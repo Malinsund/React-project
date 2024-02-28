@@ -15,7 +15,7 @@ export default function SavedRecepiesPage() {
         {savedRecipes.map((recipe: Recipe) => (
           <div
             key={recipe.id}
-            className="m-4 p-3 border-double border-4 rounded-md border-orange-500"
+            className="m-4 p-3 items-center border-double border-4 rounded-md  border-teal-900"
           >
             <Link to={"/recipes/" + recipe.id}>
               <img

@@ -79,7 +79,7 @@ export default function Showrecipe() {
           ))}
         </ul>
       </div>
-      <div className="ml-5 max-w-prose">
+      <div className="p-5 w-1/2">
         <h3 className="font-bold my-2">Beskrivning:</h3>
         <p>{recipe.description}</p>
       </div>
