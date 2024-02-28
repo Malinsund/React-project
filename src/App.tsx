@@ -6,8 +6,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import Footer from "./Footer";
 import Header from "./Header";
-import Footer from "./img/Footer";
 import OliveOil from "./img/oliveOil.png";
 import Olives from "./img/olives.png";
 
@@ -18,7 +18,7 @@ function App() {
   /* använda hook? kolla onsdagens föreläsning.. behöver hjälp med denna*/
   return (
     <>
-      <header className="">
+      <header>
         <Header />
       </header>
       <div className="flex">
@@ -57,7 +57,7 @@ function App() {
         </nav>
         <div className="flex-grow shadow-inner bg-teal-900/50">
           <main
-            className="bg-cover bg-right-bottom"
+            className="lg:bg-cover lg:bg-right-bottom"
             style={{ backgroundImage: `url(${Olives})` }}
           >
             <Outlet context={[savedRecipesIds, setSavedRecipesIds]} />

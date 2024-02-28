@@ -5,10 +5,14 @@ export default function HomePage() {
     <div className="bg-cover">
       <div className="flex">
         <div className="m-5">
-          <img className="shadow-lg w-80" src={murika} alt="Bild på Malin" />
+          <img
+            className="shadow-lg md:w-80 w-24 hidden"
+            src={murika}
+            alt="Bild på Malin"
+          />
         </div>
-        <div className="text-center m-10 w-1/2 text-xl">
-          <h1 className="mb-5">Hej!</h1>
+        <div className="text-center md:m-10 md:w-1/2 md:text-xl">
+          <h1 className="mb-5 text-xl">Hej!</h1>
           <p>
             Jag älskar mat, både att äta och laga! För några år sedan började
             jag spela in mig själv när jag lagade mat och kallade mig själv

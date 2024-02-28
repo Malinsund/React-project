@@ -1,12 +1,15 @@
+import { FormEvent } from "react";
+
 export default function Contact() {
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
-    // Hämtafrån input
-    const email = event.target.elements.email.value;
-    const name = event.target.elements.name.value;
-    const subject = event.target.elements.subject.value;
-    const message = event.target.elements.message.value;
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    const email = formData.get("email") as string;
+    const name = formData.get("name") as string;
+    const subject = formData.get("subject") as string;
+    const message = formData.get("message") as string;
 
     // måste innehålla @
     if (!email.includes("@")) {
@@ -14,7 +17,6 @@ export default function Contact() {
       return;
     }
 
-    // Alla fält är ifyllda
     if (name.trim() === "" || subject.trim() === "" || message.trim() === "") {
       alert("Fyll i alla fält");
       return;
@@ -22,11 +24,7 @@ export default function Contact() {
 
     sendEmail(email, name, subject, message);
 
-    // Töm fälten efter skickat mejl
-    event.target.elements.email.value = "";
-    event.target.elements.name.value = "";
-    event.target.elements.subject.value = "";
-    event.target.elements.message.value = "";
+    (event.target as HTMLFormElement).reset();
 
     // bekräftelsemeddelande
     alert("Ditt meddelande har skickats!");
@@ -52,7 +50,7 @@ export default function Contact() {
       <div className="flex justify-center">
         <div className="my-10 w-80">
           <p>
-            Om du har några rfågor eller funderingar så tveka inte på att
+            Om du har några frågor eller funderingar så tveka inte på att
             kontakta mig! fyll i formuläret här så svarar jag så snart jag kan!
             ha det fint.
           </p>

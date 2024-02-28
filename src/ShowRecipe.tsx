@@ -1,7 +1,7 @@
 import { HeartIcon as HeartSolidIcon } from "@heroicons/react/16/solid";
 import { HeartIcon as HeartOutlineIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
-import { useOutletContext, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { mockedrecipes } from "./Recipes";
 
 export default function Showrecipe() {
@@ -9,7 +9,7 @@ export default function Showrecipe() {
 
   const recipe = mockedrecipes.find((recipe) => recipe.id === params.id);
 
-  const [savedrecipes, setSavedrecipes] = useOutletContext<string[]>();
+  const [savedrecipes, setSavedrecipes] = useState<string[]>([]);
 
   const toggleSaved = (id: string) => {
     if (savedrecipes.includes(id)) {
@@ -79,7 +79,7 @@ export default function Showrecipe() {
           ))}
         </ul>
       </div>
-      <div className="p-5 w-1/2">
+      <div className="ml-5 max-w-prose">
         <h3 className="font-bold my-2">Beskrivning:</h3>
         <p>{recipe.description}</p>
       </div>
