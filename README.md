@@ -41,7 +41,7 @@ These are the requriments for the project;
 - [x] The assignment is submitted on time
 - [x] A presentation is completed
 
-Heres a demo of the application: [Mat-Malle](https://mat-malle-q663fxlvn-malins-projects-22532dab.vercel.app/)
+Heres a demo of the application: [Mat-Malle](mat-malle.vercel.app)
 
 Currently, two official plugins are available:
 
