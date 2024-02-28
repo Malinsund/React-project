@@ -8,7 +8,6 @@ import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
-import HomePage from "./HomePage";
 import OliveOil from "./img/oliveOil.png";
 import Olives from "./img/olives.png";
 
@@ -61,7 +60,6 @@ function App() {
             className="lg:bg-cover lg:bg-right-bottom"
             style={{ backgroundImage: `url(${Olives})` }}
           >
-            <HomePage />
             <Outlet context={[savedRecipesIds, setSavedRecipesIds]} />
           </main>
         </div>
