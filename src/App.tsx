@@ -13,7 +13,6 @@ import Olives from "./img/olives.png";
 
 function App() {
   const [savedRecipesIds, setSavedRecipesIds] = useState<string[]>([]);
-
   /* Synka stated med LS */
   /* använda hook? kolla onsdagens föreläsning.. behöver hjälp med denna*/
   return (

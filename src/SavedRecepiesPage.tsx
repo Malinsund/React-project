@@ -1,13 +1,20 @@
-import { Link, useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Recipe, mockedrecipes } from "./Recipes";
+import { useState, useEffect } from "react";
 
 export default function SavedRecepiesPage() {
-  const [savedRecipesIds] = useOutletContext<[string[]]>();
+  const [savedRecipesIds, setSavedRecipesIds] = useState<string[]>([]);
+
+  useEffect(() => {
+    const savedRecipesFromStorage = localStorage.getItem("savedRecipes");
+    if (savedRecipesFromStorage) {
+      setSavedRecipesIds(JSON.parse(savedRecipesFromStorage));
+    }
+  }, []);
 
   const savedRecipes = mockedrecipes.filter((recipe) =>
     savedRecipesIds.includes(recipe.id)
   );
-
   return (
     <div className="min-h-screen">
       <h1 className="text-center text-3xl">Sparade Recept</h1>
