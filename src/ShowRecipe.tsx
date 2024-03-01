@@ -6,7 +6,6 @@ import { mockedrecipes } from "./Recipes";
 
 export default function Showrecipe() {
   const params = useParams();
-
   const recipe = mockedrecipes.find((recipe) => recipe.id === params.id);
 
   const [savedrecipes, setSavedrecipes] = useState<string[]>([]);

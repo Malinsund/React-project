@@ -4,7 +4,6 @@ import {
   HomeIcon,
   PhotoIcon,
 } from "@heroicons/react/24/outline";
-import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -12,9 +11,6 @@ import OliveOil from "./img/oliveOil.png";
 import Olives from "./img/olives.png";
 
 function App() {
-  const [savedRecipesIds, setSavedRecipesIds] = useState<string[]>([]);
-  /* Synka stated med LS */
-  /* använda hook? kolla onsdagens föreläsning.. behöver hjälp med denna*/
   return (
     <>
       <header>
@@ -59,7 +55,7 @@ function App() {
             className="lg:bg-cover lg:bg-right-bottom"
             style={{ backgroundImage: `url(${Olives})` }}
           >
-            <Outlet context={[savedRecipesIds, setSavedRecipesIds]} />
+            <Outlet />
           </main>
         </div>
       </div>
